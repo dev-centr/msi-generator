@@ -26,7 +26,7 @@ dub build --config=prod
 === Usage
 [source,bash]
 ----
-./msi-installer-generator --name="MyApp" --id="com.example.myapp" --version="1.0.0.0" --exe="bin/myapp.exe" --output="myapp.msix"
+./msi-generator --name="MyApp" --id="com.example.myapp" --version="1.0.0.0" --exe="bin/myapp.exe" --output="myapp.msix"
 ----
 
 == Antora Documentation

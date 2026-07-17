@@ -1,6 +1,7 @@
 {
-	"name": "msi-installer-generator",
+	"name": "msi-generator",
 	"description": "Cross-platform MSI and MSIX package generator in pure D.",
+	"homepage": "https://dev-centr.github.io/msi-generator/",
 	"authors": [
 		"The Dev Center"
 	],

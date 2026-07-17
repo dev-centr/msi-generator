@@ -22,11 +22,11 @@ runs:
       run: |
         # Download logic based on OS
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-          URL="https://github.com/dev-centr/msi-installer-generator/releases/download/${{ inputs.version }}/msi-generator-linux"
+          URL="https://github.com/dev-centr/msi-generator/releases/download/${{ inputs.version }}/msi-generator-linux"
         elif [[ "$OSTYPE" == "darwin"* ]]; then
-          URL="https://github.com/dev-centr/msi-installer-generator/releases/download/${{ inputs.version }}/msi-generator-macos"
+          URL="https://github.com/dev-centr/msi-generator/releases/download/${{ inputs.version }}/msi-generator-macos"
         else
-          URL="https://github.com/dev-centr/msi-installer-generator/releases/download/${{ inputs.version }}/msi-generator.exe"
+          URL="https://github.com/dev-centr/msi-generator/releases/download/${{ inputs.version }}/msi-generator.exe"
         fi
         curl -L -o msi-generator $URL
         chmod +x msi-generator

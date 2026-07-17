@@ -1,5 +1,7 @@
 site:
   title: MSI/MSIX Generator
+  url: https://dev-centr.github.io/msi-generator
+  start_page: msi-generator::index.adoc
 output:
   dir: ./public
 content:

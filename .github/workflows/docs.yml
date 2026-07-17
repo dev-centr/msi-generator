@@ -49,6 +49,21 @@ jobs:
           setup_node: false
           fetch: true
 
+      # Project Pages root is /msi-generator/; Antora also nests the component
+      # under /msi-generator/, so add a root redirect for the canonical docs URL.
+      - name: Add Pages root redirect
+        run: |
+          SITE="${{ steps.antora.outputs.site-path }}"
+          printf '%s\n' \
+            '<!DOCTYPE html>' \
+            '<meta charset="utf-8">' \
+            '<meta http-equiv="refresh" content="0; url=msi-generator/">' \
+            '<link rel="canonical" href="msi-generator/">' \
+            '<title>MSI/MSIX Generator</title>' \
+            "<script>location.replace('msi-generator/')</script>" \
+            '<p><a href="msi-generator/">MSI/MSIX Generator documentation</a></p>' \
+            > "$SITE/index.html"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

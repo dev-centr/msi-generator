@@ -29,7 +29,7 @@
 
 ## About The Project
 
-This project aim to replace WiX in CPack (CMake) by providing a pure D implementation for generating Windows Installer (MSI) and MSIX packages without depending on Windows-only binaries.
+This project aims to replace WiX in CPack (CMake) with a pure D implementation for generating Windows Installer (MSI) and MSIX packages without Windows-only binaries. The current minimal MSI writer produces a real OLE Compound File database with core installer tables and an embedded uncompressed CAB; the MSIX writer produces a ZIP payload with manifest assets. Signing and advanced MSI authoring remain caller responsibilities.
 
 ## Installation
 

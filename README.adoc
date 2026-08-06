@@ -21,13 +21,15 @@ endif::[]
 
 A cross-platform MSI/MSIX generator in D-lang.
 
+Maturity (v0.2 path):: MSIX writes a ZIP with manifest, exe, optional extra files, and placeholder logos (unsigned). MSI writes a real OLE2 CFB with an embedded uncompressed CAB and core installer tables (not a full WiX substitute yet).
+
 link:https://dev-centr.github.io/msi-generator/[Explore the docs] ·
 link:https://github.com/dev-centr/msi-generator/issues[Report Bug] ·
 link:https://github.com/dev-centr/msi-generator/issues[Request Feature]
 
 == About The Project
 
-This project aim to replace WiX in CPack (CMake) by providing a pure D implementation for generating Windows Installer (MSI) and MSIX packages without depending on Windows-only binaries.
+This project aims to replace WiX in CPack (CMake) with a pure D implementation for generating Windows Installer (MSI) and MSIX packages without Windows-only binaries. The current minimal MSI writer produces a real OLE Compound File database with core installer tables and an embedded uncompressed CAB; the MSIX writer produces a ZIP payload with manifest assets. Signing and advanced MSI authoring remain caller responsibilities.
 
 == Installation
 

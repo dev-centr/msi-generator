@@ -1,0 +1,12 @@
+= Changelog
+
+== 2026-08-06 — CFB/CAB/MSI table writer + multi-file MSIX
+
+* `cfb-d`: version-3 OLE2 writer with FAT, mini stream, directory entries
+* `cab-d`: uncompressed MSCF cabinet builder
+* `msidb-d`: core MSI tables + embed `#cab1` into compound file
+* MSIX: `extraFiles`, placeholder Assets PNGs
+
+== Earlier
+
+* v0.1.x prototype CLI and MSIX zip skeleton

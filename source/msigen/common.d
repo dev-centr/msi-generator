@@ -7,6 +7,8 @@ struct PackageInfo {
     string publisher;
     string description;
     string executablePath;
+    /// Additional payload files placed at the package root by their base name.
+    string[] extraFiles;
 }
 
 interface PackageGenerator {

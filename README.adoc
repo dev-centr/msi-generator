@@ -1,29 +1,57 @@
-link:https://github.com/dev-centr/msi-generator[image:https://img.shields.io/badge/repo-GitHub-24292e?style=flat[Repository]]
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge[Contributors,link=https://github.com/dev-centr/msi-generator/graphs/contributors]
+image:https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge[Forks,link=https://github.com/dev-centr/msi-generator/network/members]
+image:https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge[Stars,link=https://github.com/dev-centr/msi-generator/stargazers]
+image:https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge[Issues,link=https://github.com/dev-centr/msi-generator/issues]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge[Issues]
+endif::[]
 
 = MSI/MSIX Generator
-:description: A cross-platform MSI/MSIX generator in D-lang
+
+A cross-platform MSI/MSIX generator in D-lang.
+
+link:https://dev-centr.github.io/msi-generator/[Explore the docs] ·
+link:https://github.com/dev-centr/msi-generator/issues[Report Bug] ·
+link:https://github.com/dev-centr/msi-generator/issues[Request Feature]
+
+== About The Project
 
 This project aim to replace WiX in CPack (CMake) by providing a pure D implementation for generating Windows Installer (MSI) and MSIX packages without depending on Windows-only binaries.
 
-== Quick Start
+== Installation
 
 === Prerequisites
-- D compiler (DMD, LDC, or GDC)
-- dub (D package manager)
+
+* D compiler (DMD, LDC, or GDC)
+* dub (D package manager)
 
 === Build
+
 [source,bash]
 ----
 dub build
 ----
 
 or for production readiness immediately (bypassing strict UUID typing issues):
+
 [source,bash]
 ----
 dub build --config=prod
 ----
 
-=== Usage
+== Usage
+
 [source,bash]
 ----
 ./msi-generator --name="MyApp" --id="com.example.myapp" --version="1.0.0.0" --exe="bin/myapp.exe" --output="myapp.msix"
@@ -32,6 +60,7 @@ dub build --config=prod
 == Antora Documentation
 
 Documentation is located in the `docs` folder. To build the documentation:
+
 [source,bash]
 ----
 npx antora docs/antora-playbook.yml
@@ -40,6 +69,7 @@ npx antora docs/antora-playbook.yml
 == Development Notes
 
 === Dependency: asdf
+
 This project currently requires a patched version of `asdf` for `std.uuid` serialization support.
 A PR has been submitted upstream: https://github.com/libmir/asdf/pull/30
 
@@ -47,3 +77,10 @@ Once merged and released (version > 0.7.17):
 
 1. Update `dub.json` dependency for `asdf`.
 2. Remove local override: `dub remove-local z:\code\libmir\asdf`.
+
+== Contact
+
+DevCentr.org — support@devcentr.org
+
+* Project: https://github.com/dev-centr/msi-generator
+* Site: https://devcentr.org

@@ -1,4 +1,28 @@
 = MSI/MSIX Generator
+:description: Pure-D MSI and MSIX packaging without WiX on the build machine.
+:navtitle: Introduction
 
-Welcome to the MSI/MSIX Generator documentation.
+The MSI/MSIX Generator builds Windows installer packages from a product specification. It runs on Windows, Linux, and macOS while emitting Windows formats.
 
+== Maturity
+
+* **MSIX** — ZIP + `AppxManifest.xml`, primary executable, optional extra files, placeholder logo assets (unsigned).
+* **MSI** — OLE2 compound file with core tables, string pool, and an embedded uncompressed cabinet (v0.2). Not a full WiX substitute; enough structure for tooling and Easy Installer plugins.
+
+== Get started
+
+[source,bash]
+----
+dub build --build=release --config=prod
+./msi-generator --name=MyApp --id=com.example.myapp --version=1.0.0.0 \
+  --publisher="CN=Example" --exe=bin/myapp.exe --type=msix --output=myapp.msix
+----
+
+Or use `--spec=` with a JSON product document (see repository `schema/`).
+
+== Related
+
+* xref:architecture.adoc[Architecture]
+* xref:distribution.adoc[Distribution]
+* Host UX: xref:easy-installer:ROOT:index.adoc[Easy Installer]
+* Portal: xref:home:tools/msi-installer-generator.adoc[MSI Generator overview]

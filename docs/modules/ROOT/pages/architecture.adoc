@@ -26,8 +26,10 @@ To generate an MSI without WiX, we implement the following layers:
 | A pure D implementation of the OLE2 Compound File Binary format (`libs/cfb-d`). MSI files are OLE containers.
 
 | **CAB (Cabinet) Writer**
-| A pure D implementation of the Microsoft Cabinet format (`libs/cab-d`), used for compressed file storage within MSI.
+| A pure D implementation of the Microsoft Cabinet format (`libs/cab-d`), used for file storage within MSI. v0.2 ships uncompressed MSCF cabinets.
 |===
+
+As of v0.2 these layers write real binaries (not empty stubs). Signing and full Windows Installer validation remain separate concerns.
 
 == MSIX Advantage
 

@@ -3,19 +3,32 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/dev-centr/msi-generator/graphs/contributors"><img src="https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/dev-centr/msi-generator/network/members"><img src="https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/dev-centr/msi-generator/stargazers"><img src="https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/dev-centr/msi-generator/issues"><img src="https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge" alt="Issues"></a>
+<br />
+<h3 align="center">MSI/MSIX Generator</h3>
+<p align="center">
+A cross-platform MSI/MSIX generator in D-lang.<br />
+<a href="https://dev-centr.github.io/msi-generator/"><strong>Explore the docs »</strong></a><br /><br />
+<a href="https://github.com/dev-centr/msi-generator/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/dev-centr/msi-generator/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
 ifndef::env-github[]
 image:https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge[Contributors,link=https://github.com/dev-centr/msi-generator/graphs/contributors]
 image:https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge[Forks,link=https://github.com/dev-centr/msi-generator/network/members]
 image:https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge[Stars,link=https://github.com/dev-centr/msi-generator/stargazers]
 image:https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge[Issues,link=https://github.com/dev-centr/msi-generator/issues]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge[Issues]
-endif::[]
 
 = MSI/MSIX Generator
 
@@ -26,10 +39,17 @@ Maturity (v0.2 path):: MSIX writes a ZIP with manifest, exe, optional extra file
 link:https://dev-centr.github.io/msi-generator/[Explore the docs] ·
 link:https://github.com/dev-centr/msi-generator/issues[Report Bug] ·
 link:https://github.com/dev-centr/msi-generator/issues[Request Feature]
+endif::[]
 
 == About The Project
 
 This project aims to replace WiX in CPack (CMake) with a pure D implementation for generating Windows Installer (MSI) and MSIX packages without Windows-only binaries. The current minimal MSI writer produces a real OLE Compound File database with core installer tables and an embedded uncompressed CAB; the MSIX writer produces a ZIP payload with manifest assets. Signing and advanced MSI authoring remain caller responsibilities.
+
+ifdef::env-github[]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+endif::[]
 
 == Installation
 
@@ -51,6 +71,12 @@ or for production readiness immediately (bypassing strict UUID typing issues):
 ----
 dub build --config=prod
 ----
+
+ifdef::env-github[]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+endif::[]
 
 == Usage
 
@@ -80,9 +106,21 @@ Once merged and released (version > 0.7.17):
 1. Update `dub.json` dependency for `asdf`.
 2. Remove local override: `dub remove-local z:\code\libmir\asdf`.
 
+ifdef::env-github[]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+endif::[]
+
 == Contact
 
 DevCentr.org — support@devcentr.org
 
 * Project: https://github.com/dev-centr/msi-generator
 * Site: https://devcentr.org
+
+ifdef::env-github[]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+endif::[]

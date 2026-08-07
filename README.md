@@ -1,18 +1,19 @@
 <a id="readme-top"></a>
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
 <div align="center">
-  <h1>MSI/MSIX Generator</h1>
-  <p>A cross-platform MSI/MSIX generator in D-lang.</p>
-  <p>
-    <a href="https://dev-centr.github.io/msi-generator/">Explore the docs</a>
-    ·
+  <a href="https://github.com/dev-centr/msi-generator/graphs/contributors"><img src="https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge" alt="Contributors"></a>
+  <a href="https://github.com/dev-centr/msi-generator/network/members"><img src="https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge" alt="Forks"></a>
+  <a href="https://github.com/dev-centr/msi-generator/stargazers"><img src="https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge" alt="Stargazers"></a>
+  <a href="https://github.com/dev-centr/msi-generator/issues"><img src="https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge" alt="Issues"></a>
+
+  <h3 align="center">MSI/MSIX Generator</h3>
+  <p align="center">
+    A cross-platform MSI/MSIX generator in D-lang.
+    <br />
+    <a href="https://dev-centr.github.io/msi-generator/"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
     <a href="https://github.com/dev-centr/msi-generator/issues">Report Bug</a>
-    ·
+    &middot;
     <a href="https://github.com/dev-centr/msi-generator/issues">Request Feature</a>
   </p>
 </div>
@@ -30,6 +31,8 @@
 ## About The Project
 
 This project aims to replace WiX in CPack (CMake) with a pure D implementation for generating Windows Installer (MSI) and MSIX packages without Windows-only binaries. The current minimal MSI writer produces a real OLE Compound File database with core installer tables and an embedded uncompressed CAB; the MSIX writer produces a ZIP payload with manifest assets. Signing and advanced MSI authoring remain caller responsibilities.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Installation
 
@@ -49,6 +52,8 @@ or for production readiness immediately (bypassing strict UUID typing issues):
 ```bash
 dub build --config=prod
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
 
@@ -76,22 +81,14 @@ Once merged and released (version > 0.7.17):
 1. Update `dub.json` dependency for `asdf`.
 2. Remove local override: `dub remove-local z:\code\libmir\asdf`.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Contact
 
 DevCentr.org — support@devcentr.org
 
-Project Link: https://github.com/dev-centr/msi-generator
+Project Link: [https://github.com/dev-centr/msi-generator](https://github.com/dev-centr/msi-generator)
 
-Site: https://devcentr.org
+Site: [https://devcentr.org](https://devcentr.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/dev-centr/msi-generator.svg?style=for-the-badge
-[contributors-url]: https://github.com/dev-centr/msi-generator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dev-centr/msi-generator.svg?style=for-the-badge
-[forks-url]: https://github.com/dev-centr/msi-generator/network/members
-[stars-shield]: https://img.shields.io/github/stars/dev-centr/msi-generator.svg?style=for-the-badge
-[stars-url]: https://github.com/dev-centr/msi-generator/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dev-centr/msi-generator.svg?style=for-the-badge
-[issues-url]: https://github.com/dev-centr/msi-generator/issues

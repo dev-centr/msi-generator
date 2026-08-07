@@ -9,7 +9,7 @@
   <p align="center">
     A cross-platform MSI/MSIX generator in D-lang.
     <br />
-    <a href="https://dev-centr.github.io/msi-generator/"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.devcentr.org/msi-generator/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/dev-centr/msi-generator/issues">Report Bug</a>
@@ -63,10 +63,12 @@ dub build --config=prod
 
 ### Antora Documentation
 
-Documentation is located in the `docs` folder. To build the documentation:
+Docs live on the Dev-Centr hub: https://docs.devcentr.org/msi-generator/
+Component source is in `docs/` (wired via `dev-centr/docs`). Local build validates only — do not publish a secondary Antora site.
 
 ```bash
-npx antora docs/antora-playbook.yml
+pnpm install
+pnpm run build   # or: antora antora-playbook.yml
 ```
 
 ### Development Notes

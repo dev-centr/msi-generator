@@ -36,7 +36,7 @@ A cross-platform MSI/MSIX generator in D-lang.
 
 Maturity (v0.2 path):: MSIX writes a ZIP with manifest, exe, optional extra files, and placeholder logos (unsigned). MSI writes a real OLE2 CFB with an embedded uncompressed CAB and core installer tables (not a full WiX substitute yet).
 
-link:https://dev-centr.github.io/msi-generator/[Explore the docs] ·
+link:https://docs.devcentr.org/msi-generator/[Explore the docs] ·
 link:https://github.com/dev-centr/msi-generator/issues[Report Bug] ·
 link:https://github.com/dev-centr/msi-generator/issues[Request Feature]
 endif::[]

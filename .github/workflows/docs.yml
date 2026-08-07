@@ -1,19 +1,29 @@
-﻿name: Documentation
+﻿# Validate Antora component build only.
+# Do NOT publish a secondary Antora site — docs live at https://docs.devcentr.org
+# (wired via https://github.com/dev-centr/docs).
+
+name: Documentation
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - 'antora-playbook.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'antora-playbook.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   build-docs:
@@ -38,8 +48,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site
-        id: antora
+      - name: Build site (validation only)
         uses: antora-supplemental/antora-build-action@v2
         with:
           playbook: antora-playbook.yml
@@ -48,37 +57,3 @@ jobs:
           setup_pnpm: false
           setup_node: false
           fetch: true
-
-      # Project Pages root is /msi-generator/; Antora also nests the component
-      # under /msi-generator/, so add a root redirect for the canonical docs URL.
-      - name: Add Pages root redirect
-        run: |
-          SITE="${{ steps.antora.outputs.site-path }}"
-          printf '%s\n' \
-            '<!DOCTYPE html>' \
-            '<meta charset="utf-8">' \
-            '<meta http-equiv="refresh" content="0; url=msi-generator/">' \
-            '<link rel="canonical" href="msi-generator/">' \
-            '<title>MSI/MSIX Generator</title>' \
-            "<script>location.replace('msi-generator/')</script>" \
-            '<p><a href="msi-generator/">MSI/MSIX Generator documentation</a></p>' \
-            > "$SITE/index.html"
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ${{ steps.antora.outputs.site-path }}
-
-  deploy:
-    needs: build-docs
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4

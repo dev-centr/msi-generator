@@ -24,5 +24,5 @@ Or use `--spec=` with a JSON product document (see repository `schema/`).
 
 * xref:architecture.adoc[Architecture]
 * xref:distribution.adoc[Distribution]
-* Host UX: xref:ibex:ROOT:index.adoc[Ibex]
-* Portal: xref:home::tools/msi-installer-generator.adoc[MSI Generator overview]
+* Host UX: link:https://docs.devcentr.org/tools/ibex/[Ibex]
+* Portal: link:https://docs.devcentr.org/home/tools/msi-installer-generator/[MSI Generator overview]

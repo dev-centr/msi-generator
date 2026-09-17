@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Distribution and Integration :: MSI/MSIX Generator</title>
+    <link rel="canonical" href="https://dev-centr.github.io/msi-generator/msi-generator/distribution.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://dev-centr.github.io/msi-generator">MSI/MSIX Generator</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="msi-generator" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">MSI/MSIX Generator</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="architecture.html">Architecture</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="distribution.html">Distribution</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">MSI/MSIX Generator</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">MSI/MSIX Generator</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">MSI/MSIX Generator</a></li>
+    <li><a href="distribution.html">Distribution</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Z:/code/github.com/dev-centr/msi-generator/docs/modules/ROOT/pages/distribution.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Distribution and Integration</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>msi-generator</code> is designed for high portability and easy integration into existing native build pipelines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standalone_cli"><a class="anchor" href="#_standalone_cli"></a>Standalone CLI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The primary distribution format is a statically linked CLI binary. This ensures that the tool can run on any CI/CD environment without installing the D runtime or a compiler.</p>
+</div>
+<div class="sect2">
+<h3 id="_platforms"><a class="anchor" href="#_platforms"></a>Platforms</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Windows</strong>: <code>x86_64-pc-windows-msvc</code></p>
+</li>
+<li>
+<p><strong>Linux</strong>: <code>x86_64-unknown-linux-gnu</code></p>
+</li>
+<li>
+<p><strong>macOS</strong>: <code>x86_64-apple-darwin</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_json_specification_msi_json"><a class="anchor" href="#_json_specification_msi_json"></a>JSON Specification (<code>msi.json</code>)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To decouple the build logic from the tool, we use a JSON specification.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "MyProject",
+  "manufacturer": "DevCenter",
+  "productVersion": "1.0.0.0",
+  "productCode": "00000000-0000-0000-0000-000000000000",
+  "upgradeCode": "00000000-0000-0000-0000-000000000001",
+  "rootFolder": {
+    "id": "INSTALLDIR",
+    "name": "My App",
+    "parentId": "",
+    "subfolders": []
+  },
+  "components": [],
+  "features": []
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The JSON schema is available at <code>schema/msi-spec.schema.json</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integrations"><a class="anchor" href="#_integrations"></a>Integrations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cmake_cpack"><a class="anchor" href="#_cmake_cpack"></a>CMake / CPack</h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The CMake integration is currently experimental and incomplete. It does not yet generate valid JSON with required UUID fields.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A CMake module is provided in <code>cmake/MSIGenerator.cmake</code>. To use it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cmake hljs" data-lang="cmake">include(cmake/MSIGenerator.cmake)
+if(CPACK_MSI_GENERATOR_FOUND)
+    cpack_msi_generator_generate_spec()
+endif()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github_actions"><a class="anchor" href="#_github_actions"></a>GitHub Actions</h3>
+<div class="paragraph">
+<p>Use the official action to generate installers in your CI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- uses: devcntr-app/msi-generator@main
+  with:
+    spec: 'msi.json'
+    output: 'myapp.msi'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library_usage_dub"><a class="anchor" href="#_library_usage_dub"></a>Library Usage (DUB)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add <code>msi-generator</code> as a dependency in your <code>dub.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"dependencies": {
+    "msi-generator": "~&gt;1.0.0"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

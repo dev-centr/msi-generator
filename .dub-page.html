@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/markdown.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/top.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/top_p.css"/>
+		<link rel="shortcut icon" href="../favicon.ico"/>
+		<link rel="search" href="../opensearch.xml" type="application/opensearchdescription+xml" title="DUB"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=10.0"/>
+		<!-- facebook & co.-->
+		<meta property="og:url" content=""/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:title" content="Package msi-generator on DUB"/>
+		<meta property="og:image" content="/packages/msi-generator/logo?s=000000000000000000000000"/>
+		<meta property="og:description" content="Cross-platform MSI and MSIX package generator in pure D."/>
+		<meta property="og:site_name" content="DUB Package Registry"/>
+		<meta property="og:locale" content="en_US"/>
+		<meta property="article:author" content="Ryan Johnson"/>
+		<!-- twitter-->
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:site" content="@D_Programming"/>
+		<meta name="twitter:url" content="http://code.dlang.org/packages/msi-generator"/>
+		<meta name="twitter:title" content="Package msi-generator on DUB"/>
+		<meta name="twitter:description" content="Cross-platform MSI and MSIX package generator in pure D."/>
+		<meta name="twitter:image" content="/packages/msi-generator/logo?s=000000000000000000000000"/>
+		<meta name="theme-color" content="#B03931"/>
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="description" content="Cross-platform MSI and MSIX package generator in pure D."/>
+		<title>Package msi-generator version 0.1.1 - DUB - The D package registry</title>
+	</head>
+	<body id="Home" class="doc">
+		<script>document.body.className += ' have-javascript'</script>
+		<div id="top">
+			<div class="helper">
+				<div class="helper expand-container active">
+					<div class="logo">
+						<a href="../">
+							<img id="logo" alt="DUB Logo" src="../images/dub-header.png"/>
+						</a>
+					</div>
+					<a href="#" title="Menu" class="hamburger expand-toggle">
+						<span>Menu</span>
+					</a>
+					<div id="cssmenu">
+						<ul>
+							<li class="">
+								<a href="../">
+									<span>Packages</span>
+								</a>
+							</li>
+							<li class="expand-container">
+								<a class="expand-toggle" href="#">
+									<span>Documentation</span>
+								</a>
+								<ul class="expand-content">
+									<li class="">
+										<a href="https://dub.pm/">
+											<span>Getting Started</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://dub.pm/dub-guide/recipe/">
+											<span>DUB Guide</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://dub.pm/dub-reference/recipe/">
+											<span>DUB Reference</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://dub.pm/cli-reference/dub/">
+											<span>CLI Reference</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://dub.pm/dub-reference/build_settings/">
+											<span>Recipe build settings</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://dub.pm/dub-reference/settings/">
+											<span>Settings</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="expand-container">
+								<a class="expand-toggle" href="#">
+									<span>About</span>
+								</a>
+								<ul class="expand-content">
+									<li class="">
+										<a href="http://forum.rejectedsoftware.com/groups/rejectedsoftware.dub">
+											<span>Forums</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://github.com/dlang/dub-registry/issues">
+											<span>Bug tracker (website)</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://github.com/dlang/dub/issues">
+											<span>Bug tracker (DUB)</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://github.com/dlang/dub-registry">
+											<span>Github repository (website)</span>
+										</a>
+									</li>
+									<li class="">
+										<a href="https://github.com/dlang/dub">
+											<span>GitHub repository (DUB)</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="">
+								<a href="https://github.com/dlang/dub/releases">
+									<span>Download</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="../login?redirect=/packages/msi-generator">
+									<span>Log in</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search-container expand-container">
+						<a class="expand-toggle" href="search.html" title="Search">
+							<span>Search</span>
+						</a>
+						<div id="search-box">
+							<form method="GET" action="../search">
+								<span id="search-query">
+									<input id="q" name="q" placeholder="Search for a package"/>
+								</span>
+								<span id="search-submit">
+									<button type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="main">
+				<h1>
+					msi-generator <strong class="badge">0.1.1</strong>
+				</h1>
+				<p>Cross-platform MSI and MSIX package generator in pure D.</p>
+				<br/>
+				<p>To use this package, run the following command in your project's root directory:</p>
+				<div class="clipboard-pkg">
+					<div class="clipboard-pkg-row">
+						<input id="package-clipboard" value="dub add msi-generator"/>
+						<button class="btn-clipboard" data-clipboard-target="#package-clipboard">
+							<img src="/images/clippy.svg" width="13" alt="Copy to clipboard"/>
+						</button>
+					</div>
+				</div>
+				<div class="clipboard-manual">
+					<p>
+						<strong>Manual usage</strong>
+						<br/>
+						Put the following dependency into your project's dependences section:
+					</p>
+					<div class="clipboard-pkg">
+						<div class="clipboard-pkg-row">
+							<label class="clipboard-pkg-title" for="package-clipboard-json">dub.json</label>
+							<input id="package-clipboard-json" value="&quot;msi-generator&quot;: &quot;~&gt;0.1.1&quot;"/>
+							<button class="btn-clipboard" data-clipboard-target="#package-clipboard-json">
+								<img src="/images/clippy.svg" width="13" alt="Copy to clipboard"/>
+							</button>
+						</div>
+						<div class="clipboard-pkg-row">
+							<label class="clipboard-pkg-title" for="package-clipboard-sdl">dub.sdl</label>
+							<input id="package-clipboard-sdl" value="dependency &quot;msi-generator&quot; version=&quot;~&gt;0.1.1&quot;"/>
+							<button class="btn-clipboard" data-clipboard-target="#package-clipboard-sdl">
+								<img src="/images/clippy.svg" width="13" alt="Copy to clipboard"/>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="subtabsHeader">
+					<a class="tab active" href="../packages/msi-generator?tab=info">Info</a><a class="tab external" href="https://dev-centr.github.io/msi-generator/" target="_blank">Documentation</a>
+				</div>
+				<div class="repositoryReadme markdown-body">
+					<div><p>= MSI/MSIX Generator
+:description: A cross-platform MSI/MSIX generator in D-lang
+</p>
+<p>This project aim to replace WiX in CPack (CMake) by providing a pure D implementation for generating Windows Installer (MSI) and MSIX packages without depending on Windows-only binaries.
+</p>
+<p>== Quick Start
+</p>
+<p>=== Prerequisites
+</p>
+<ul>
+<li>D compiler (DMD, LDC, or GDC)
+</li>
+<li>dub (D package manager)
+</li>
+</ul>
+<p>=== Build
+[source,bash]
+</p>
+<h3 id="dub-build">dub build</h3>
+<p>or for production readiness immediately (bypassing strict UUID typing issues):
+[source,bash]
+</p>
+<h3 id="dub-build-config-prod">dub build --config=prod</h3>
+<p>=== Usage
+[source,bash]
+</p>
+<h3 id="msi-generator-name-myapp-id-com-example-myapp-version-1-0-0-0-exe-bin-myapp-exe-output-myapp-msix">./msi-generator --name="MyApp" --id="com.example.myapp" --version="1.0.0.0" --exe="bin/myapp.exe" --output="myapp.msix"</h3>
+<p>== Antora Documentation
+</p>
+<p>Documentation is located in the <code class="prettyprint">docs</code> folder. To build the documentation:
+[source,bash]
+</p>
+<h3 id="npx-antora-docs-antora-playbook-yml">npx antora docs/antora-playbook.yml</h3>
+<p>== Development Notes
+</p>
+<p>=== Dependency: asdf
+This project currently requires a patched version of <code class="prettyprint">asdf</code> for <code class="prettyprint">std.uuid</code> serialization support.
+A PR has been submitted upstream: https://github.com/libmir/asdf/pull/30
+</p>
+<p>Once merged and released (version &gt; 0.7.17):
+</p>
+<ol>
+<li>Update <code class="prettyprint">dub.json</code> dependency for <code class="prettyprint">asdf</code>.
+</li>
+<li>Remove local override: <code class="prettyprint">dub remove-local z:\code\libmir\asdf</code>.
+</li>
+</ol>
+</div>
+				</div>
+			</div>
+			<div class="packageInfo">
+				<ul class="unmarkedList">
+					<li id="registredBy">
+						Registered by <strong>Ryan Johnson</strong>
+					</li>
+					<li id="latestVersion">
+						<strong>0.1.1</strong> released 5 months ago
+					</li>
+					<li id="repository">
+						<a class="blind github" href="https://github.com/dev-centr/msi-generator">dev-centr/msi-generator</a>
+					</li>
+					<li id="license">MIT</li>
+				</ul>
+				<dl>
+					<dt>Authors:</dt>
+					<dd class="wrap">
+						<ul class="authors unmarkedList">
+							<li>The Dev Center</li>
+						</ul>
+					</dd>
+					<dt>Dependencies:</dt>
+					<dd class="wrap">
+						<a class="blind" href="../packages/cfb-d">cfb-d</a>, <a class="blind" href="../packages/cab-d">cab-d</a>, <a class="blind" href="../packages/msidb-d">msidb-d</a>, <a class="blind" href="../packages/asdf">asdf</a>
+					</dd><dt>Versions:</dt>
+					<dd id="versions">
+						<table>
+							<tr>
+								<td>
+									<strong>0.1.1</strong>
+								</td>
+								<td>
+									<span>2026-Feb-12</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a class="blind" href="../packages/msi-generator/~main">
+										~main
+									</a>
+								</td>
+								<td>
+									<span>2026-Jul-17</span>
+								</td>
+							</tr>
+						</table>
+						<span id="showAll">
+							<a class="blind" href="../packages/msi-generator/versions">
+								Show all 2 versions
+							</a>
+						</span>
+					</dd>
+					<dt>Download Stats:</dt>
+					<dd id="stats">
+						<ul class="unmarkedList">
+							<li>
+								<p>
+									<strong>0</strong> downloads today
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>0</strong> downloads this week
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>1</strong> downloads this month
+								</p>
+							</li>
+							<li>
+								<p>
+									<strong>10</strong> downloads total
+								</p>
+							</li>
+						</ul>
+					</dd>
+					<dt>Score:</dt><dd id="score" title="0.0&#10;&#10;#downloads / m: 1&#10;#stars: 0&#10;#watchers: 0&#10;#forks: 0&#10;#issues: 0&#10;"><a href="https://dub.pm/dub-guide/publishing/#package-scoring">0.0</a></dd>
+					<dt>
+						Short URL:
+						<dd>
+							<a href="http://msi-generator.dub.pm" target="_blank">msi-generator.dub.pm</a>
+						</dd>
+					</dt>
+				</dl>
+			</div>
+			<script type="application/javascript" src="/scripts/clipboard.min.js"></script>
+<script>
+	//<![CDATA[
+	new Clipboard('.btn-clipboard');
+	//]]>
+</script>
+		</div>
+	</body>
+	<script type="application/javascript" src="/scripts/menu.js"></script>
+</html>

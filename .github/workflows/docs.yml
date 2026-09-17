@@ -1,23 +1,20 @@
-﻿# Validate Antora component build only.
-# Do NOT publish a secondary Antora site — docs live at https://docs.devcentr.org
-# (wired via https://github.com/dev-centr/docs).
+# Component docs live in docs/; the org hub builds them.
+# Canonical: https://docs.devcentr.org/msi-generator/
+# (wired via https://github.com/dev-centr/docs). No standalone Antora playbook/site.
 
 name: Documentation
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - 'docs/**'
-      - 'antora-playbook.yml'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - '.github/workflows/docs.yml'
   pull_request:
     paths:
       - 'docs/**'
-      - 'antora-playbook.yml'
       - 'package.json'
       - 'pnpm-lock.yaml'
   workflow_dispatch:
@@ -26,34 +23,15 @@ permissions:
   contents: read
 
 jobs:
-  build-docs:
+  validate-component:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          package_json_file: package.json
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build site (validation only)
-        uses: antora-supplemental/antora-build-action@v2
-        with:
-          playbook: antora-playbook.yml
-          output_dir: public
-          install_dependencies: false
-          setup_pnpm: false
-          setup_node: false
-          fetch: true
+      - name: Validate Antora component descriptor
+        run: |
+          set -euo pipefail
+          test -f docs/antora.yml
+          grep -qE '^name:[[:space:]]*msi-generator' docs/antora.yml
+          test -f docs/modules/ROOT/pages/index.adoc
+          echo "OK: msi-generator Antora component present for docs hub"

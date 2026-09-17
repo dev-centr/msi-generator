@@ -68,7 +68,7 @@ Component source is in `docs/` (wired via `dev-centr/docs`). Local build validat
 
 ```bash
 pnpm install
-pnpm run build   # or: antora antora-playbook.yml
+Built by the Dev-Centr docs hub (dev-centr/docs) — no standalone playbook in this repo.
 ```
 
 ### Development Notes

@@ -1,8 +1,6 @@
 {
-  "name": "msi-generator-docs",
+  "name": "msi-generator",
   "private": true,
-  "devDependencies": {
-    "antora": "^3.1.14"
-  },
+  "description": "MSI/MSIX generator \u2014 Antora component under docs/ is built by dev-centr/docs hub",
   "packageManager": "pnpm@10.28.1"
 }

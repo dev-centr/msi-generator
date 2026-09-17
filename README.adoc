@@ -15,7 +15,7 @@ ifdef::env-github[]
 <h3 align="center">MSI/MSIX Generator</h3>
 <p align="center">
 A cross-platform MSI/MSIX generator in D-lang.<br />
-<a href="https://dev-centr.github.io/msi-generator/"><strong>Explore the docs »</strong></a><br /><br />
+<a href="https://docs.devcentr.org/tools/msi-generator/"><strong>Explore the docs »</strong></a><br /><br />
 <a href="https://github.com/dev-centr/msi-generator/issues">Report Bug</a>
 &middot;
 <a href="https://github.com/dev-centr/msi-generator/issues">Request Feature</a>
@@ -36,7 +36,7 @@ A cross-platform MSI/MSIX generator in D-lang.
 
 Maturity (v0.2 path):: MSIX writes a ZIP with manifest, exe, optional extra files, and placeholder logos (unsigned). MSI writes a real OLE2 CFB with an embedded uncompressed CAB and core installer tables (not a full WiX substitute yet).
 
-link:https://docs.devcentr.org/msi-generator/[Explore the docs] ·
+link:https://docs.devcentr.org/tools/msi-generator/[Explore the docs] ·
 link:https://github.com/dev-centr/msi-generator/issues[Report Bug] ·
 link:https://github.com/dev-centr/msi-generator/issues[Request Feature]
 endif::[]
@@ -91,7 +91,7 @@ Documentation is located in the `docs` folder. To build the documentation:
 
 [source,bash]
 ----
-npx antora docs/antora-playbook.yml
+See https://docs.devcentr.org/tools/msi-generator/ (built from docs/ by the org hub).
 ----
 
 == Development Notes

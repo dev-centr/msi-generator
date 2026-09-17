@@ -1,0 +1,4 @@
+/* Simple dark theme overrides */
+body.doc { background-color: var(--body-background); color: var(--body-font-color); }
+.nav-container { background-color: var(--nav-background); }
+

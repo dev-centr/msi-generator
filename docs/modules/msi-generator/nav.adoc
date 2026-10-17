@@ -1,4 +1,5 @@
-* xref:index.adoc[Introduction]
+.MSI/MSIX Generator
+* xref:index.adoc[Overview]
 * xref:architecture.adoc[Architecture]
 * xref:distribution.adoc[Distribution]
 
